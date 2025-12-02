@@ -2,7 +2,7 @@ import { MessageCircle, Facebook, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/your-number", "_blank");
+    window.open("https://wa.me/+918137813446", "_blank");
   };
 
   const scrollToSection = (id: string) => {
@@ -62,15 +62,21 @@ const Footer = () => {
                 className="w-10 h-10 bg-[#006938] hover:bg-[#005530] rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
                 <MessageCircle className="w-5 h-5" />
               </button>
-              <button className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
-                <Facebook className="w-5 h-5" />
-              </button>
-              <button className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
-                <Instagram className="w-5 h-5" />
-              </button>
-              <button className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
-                <Twitter className="w-5 h-5" />
-              </button>
+              <a href="https://www.facebook.com/share/17cZMF6xV4/?mibextid=wwXIfr">
+                <button className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                  <Facebook className="w-5 h-5" />
+                </button>
+              </a>
+              <a href="https://www.instagram.com/fudsy.in/?igsh=MWNmbTZobW0zeGhkNw%3D%3D&utm_source=qr#">
+                <button className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                  <Instagram className="w-5 h-5" />
+                </button>
+              </a>
+              {/* <a href="https://www.instagram.com/fudsy.in/?igsh=MWNmbTZobW0zeGhkNw%3D%3D&utm_source=qr#">
+                <button className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                  <Twitter className="w-5 h-5" />
+                </button>
+              </a> */}
             </div>
           </div>
         </div>

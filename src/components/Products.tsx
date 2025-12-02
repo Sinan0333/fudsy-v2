@@ -5,7 +5,9 @@ interface Product {
   id: number;
   name: string;
   description: string;
-  price: string;
+  originalPrice: number;
+  offer?: number;
+  offerPrice: number;
   image: string;
   isComingSoon: boolean;
 }
@@ -16,7 +18,9 @@ const products: Product[] = [
     name: "Ginger Garlic Paste",
     description:
       "Fresh, aromatic, and ready to use. Save time without compromising on taste and quality.",
-    price: "₹129",
+    originalPrice: 199,
+    // offer: 17,
+    offerPrice: 149,
     image: "/products/tamarind-powder.jpeg",
     isComingSoon: true,
   },
@@ -25,7 +29,9 @@ const products: Product[] = [
     name: "Tamarind Powder",
     description:
       "Skip the soaking and straining. Just add our instant tamarind powder for authentic tangy flavor.",
-    price: "₹149",
+    originalPrice: 60,
+    offer: 17,
+    offerPrice: 50,
     image: "/products/tamarind-powder.jpeg",
     isComingSoon: false,
   },
@@ -34,7 +40,9 @@ const products: Product[] = [
     name: "Curry Masala Mix",
     description:
       "The perfect blend of spices for rich, flavorful curries. Just add and cook.",
-    price: "₹179",
+    originalPrice: 199,
+    // offer: 17,
+    offerPrice: 149,
     image: "/products/tamarind-powder.jpeg",
     isComingSoon: true,
   },
@@ -70,14 +78,14 @@ const Products = () => {
 
   const handleBuyNow = (productName: string) => {
     const message = encodeURIComponent(`I want to buy ${productName}`);
-    window.open(`https://wa.me/your-number?text=${message}`, "_blank");
+    window.open(`https://wa.me/+918137813446?text=${message}`, "_blank");
   };
 
   const handleComingSoonClick = () => {
     const message = encodeURIComponent(
       "I would like to be notified when this product is available!"
     );
-    window.open(`https://wa.me/your-number?text=${message}`, "_blank");
+    window.open(`https://wa.me/+918137813446?text=${message}`, "_blank");
   };
 
   return (
@@ -119,17 +127,25 @@ const Products = () => {
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   {product.description}
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="mb-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-sm font-semibold text-gray-500 line-through">
+                      ₹{product.originalPrice}
+                    </span>
+                    <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-bold">
+                      {product.offer}% OFF
+                    </span>
+                  </div>
                   <span className="text-3xl font-bold text-[#006938]">
-                    {product.price}
+                    ₹{product.offerPrice}
                   </span>
-                  <button
-                    onClick={() => handleBuyNow(product.name)}
-                    className="bg-[#006938] hover:bg-[#005530] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2">
-                    <ShoppingCart className="w-5 h-5" />
-                    Buy Now
-                  </button>
                 </div>
+                <button
+                  onClick={() => handleBuyNow(product.name)}
+                  className="w-full bg-[#006938] hover:bg-[#005530] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center gap-2">
+                  <ShoppingCart className="w-5 h-5" />
+                  Buy Now
+                </button>
               </div>
 
               {product.isComingSoon && (

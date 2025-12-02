@@ -1,4 +1,4 @@
-import { MessageCircle, ArrowRight, Zap, Shield, Leaf } from "lucide-react";
+import { MessageCircle, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
@@ -19,14 +19,17 @@ const Hero = () => {
   }, []);
 
   const handleContactClick = () => {
-    window.open("https://wa.me/your-number", "_blank");
+    const message = encodeURIComponent(
+      "I would like to know more about your products!"
+    );
+    window.open(`https://wa.me/+918137813446?text=${message}`, "_blank");
   };
 
-  const features = [
-    { icon: Zap, text: "Instant Solutions" },
-    { icon: Leaf, text: "100% Natural" },
-    { icon: Shield, text: "Trusted Quality" },
-  ];
+  // const features = [
+  //   { icon: Zap, text: "Instant Solutions" },
+  //   { icon: Leaf, text: "100% Natural" },
+  //   { icon: Shield, text: "Trusted Quality" },
+  // ];
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-slate-50 to-gray-100 relative overflow-hidden px-4 sm:px-6 md:px-8">
@@ -101,13 +104,13 @@ const Hero = () => {
             className="group relative overflow-hidden bg-[#006938] hover:bg-[#005530] text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl inline-flex items-center gap-3 w-full sm:w-auto justify-center">
             <div className="absolute inset-0 bg-white/10 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
             <MessageCircle className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform duration-300 relative" />
-            <span className="relative">Get Started</span>
+            <span className="relative">Contact Us</span>
             <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300 relative" />
           </button>
 
-          <button className="group px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-bold text-gray-900 border-2 border-gray-300 hover:border-[#006938] transition-all duration-300 hover:bg-gray-50 w-full sm:w-auto">
+          {/* <button className="group px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-bold text-gray-900 border-2 border-gray-300 hover:border-[#006938] transition-all duration-300 hover:bg-gray-50 w-full sm:w-auto">
             Learn More
-          </button>
+          </button> */}
         </div>
 
         {/* Feature highlights */}
