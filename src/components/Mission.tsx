@@ -51,17 +51,16 @@ const Mission = () => {
               </h2>
             </div>
             <p className="text-lg text-gray-600 leading-relaxed">
-              To make cooking easier, quicker, and more enjoyable by creating
-              instant food solutions without compromising authenticity. We
-              believe that everyone deserves to enjoy delicious, home-cooked
-              meals without spending hours in the kitchen.
+              To bring purity, convenience, and authenticity into every kitchen
+              by transforming traditional ingredients into modern, easy-to-use
+              food solutions that inspire confident and joyful cooking.
             </p>
             <div className="mt-8 p-6 bg-white rounded-2xl shadow-lg">
               <p className="text-gray-700 italic">
-                "At Fudsy, we're passionate about bringing the joy of cooking
-                back to your kitchen by eliminating the tedious prep work and
-                letting you focus on what matters most - creating memorable
-                meals for your loved ones."
+                "At Fudsy, We don’t just sell food products—we redesign everyday
+                food ingredients to be faster to use, cleaner to handle, and
+                consistent in taste, making home cooking effortless without
+                losing traditional flavor."
               </p>
             </div>
           </div>

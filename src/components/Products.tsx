@@ -11,6 +11,7 @@ interface Product {
   image: string;
   isComingSoon: boolean;
   delivery: string;
+  isFreeDelivery: boolean;
 }
 
 const deliveryStatus = {
@@ -55,6 +56,7 @@ const products: Product[] = [
     offerPrice: 149,
     image: "/products/tamarind-powder-3-combo.png",
     isComingSoon: false,
+    isFreeDelivery: false,
     delivery: deliveryStatus.deliveryCharges,
   },
   {
@@ -67,6 +69,7 @@ const products: Product[] = [
     offerPrice: 249,
     image: "/products/tamarind-powder-5-combo.png",
     isComingSoon: false,
+    isFreeDelivery: true,
     delivery: deliveryStatus.freeDelivery,
   },
 ];
@@ -154,31 +157,41 @@ const Products = () => {
                   </p>
                   <div className="mb-4">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-sm font-semibold text-gray-500 line-through">
+                      <span className="text-xl font-semibold text-gray-500 line-through">
                         ₹{product.originalPrice}
                       </span>
-                      <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-bold">
+                      {/* <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-bold">
                         {product.offer}% OFF
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between">
+                      </span> */}
                       <span className="text-3xl font-bold text-[#006938]">
                         ₹{product.offerPrice}
                       </span>
+                      +
+                      {!product.isFreeDelivery ? (
+                        <span className="text-md font-semibold text-red-400">
+                          Delivery Charge
+                        </span>
+                      ) : (
+                        <span className="text-md font-semibold text-[#006938]">
+                          Free Delivery
+                        </span>
+                      )}
+                    </div>
+                    {/* <div className="flex items-center justify-between">
                       <div
                         className={`rounded-md flex items-center ${getDeliveryStatusColor(
                           product.delivery
                         )} py-0.5 px-2.5 border border-transparent text-sm text-black transition-all shadow-sm`}>
-                        {/* <div className="mx-auto block h-2 w-2 rounded-full bg-green-800 mr-2"></div> */}
+                        <div className="mx-auto block h-2 w-2 rounded-full bg-green-800 mr-2"></div>
                         {product.delivery}
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   <button
                     onClick={() => handleBuyNow(product.name)}
                     className="w-full bg-[#006938] hover:bg-[#005530] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center gap-2">
                     <ShoppingCart className="w-5 h-5" />
-                    Buy Now
+                    Order Now
                   </button>
                 </div>
 

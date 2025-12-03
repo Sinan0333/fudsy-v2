@@ -6,7 +6,7 @@ const GetInTouch = () => {
   const [visibleContent, setVisibleContent] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    phone: "",
     subject: "",
     message: "",
   });
@@ -56,7 +56,8 @@ const GetInTouch = () => {
       const { error } = await supabase.from("contact_messages").insert([
         {
           name: formData.name,
-          email: formData.email,
+          // email: formData.email,
+          phone: formData.phone,
           subject: formData.subject,
           message: formData.message,
           created_at: new Date().toISOString(),
@@ -69,7 +70,7 @@ const GetInTouch = () => {
       setStatusMessage(
         "Thank you! We received your message. Our team will get back to you soon."
       );
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", phone: "", subject: "", message: "" });
 
       setTimeout(() => {
         setSubmitStatus("idle");
@@ -259,7 +260,7 @@ const GetInTouch = () => {
                 </div>
 
                 {/* Email Input */}
-                <div>
+                {/* <div>
                   <label
                     htmlFor="email"
                     className="block text-sm font-semibold text-gray-900 mb-2">
@@ -274,6 +275,25 @@ const GetInTouch = () => {
                     required
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#006938] focus:outline-none transition-colors duration-300 bg-gray-50"
                     placeholder="your.email@example.com"
+                  />
+                </div> */}
+
+                {/* Phone */}
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-semibold text-gray-900 mb-2">
+                    Phone
+                  </label>
+                  <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#006938] focus:outline-none transition-colors duration-300 bg-gray-50"
+                    placeholder="+91 1234567890"
                   />
                 </div>
 
