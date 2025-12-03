@@ -144,7 +144,7 @@ const GetInTouch = () => {
         </div>
 
         {/* Contact Methods */}
-        <div
+        {/* <div
           className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 transition-all duration-1000 transform ${
             visibleContent
               ? "opacity-100 translate-y-0"
@@ -175,7 +175,7 @@ const GetInTouch = () => {
               </a>
             );
           })}
-        </div>
+        </div> */}
 
         {/* Form Section */}
         <div
