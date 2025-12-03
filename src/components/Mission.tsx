@@ -35,7 +35,7 @@ const Mission = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 pb-0 px-4 bg-gradient-to-br from-gray-50 to-white">
+      className="py-20 pb-0 md:pb-20 px-4 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           <div
