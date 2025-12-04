@@ -140,7 +140,7 @@ const Reviews = () => {
                   </h3> */}
 
                   {/* Review Content */}
-                  <p className="text-gray-600 leading-relaxed mb-6 line-clamp-4">
+                  <p className="text-gray-600 leading-relaxed mb-6 line-clamp-7">
                     {review.content}
                   </p>
 
